@@ -18,6 +18,15 @@
   height: 50px;
 }
 
+.oval {
+	width: 200px;
+	height: 100px;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
+
+
 .square {
   width: 50px;
   height: 50px;
@@ -30,7 +39,7 @@
 </div>
 
 <script>
-  
+
 // Connect to deepstreamHub
 var client = deepstream('wss://154.deepstreamhub.com?apiKey=632e26ce-715f-4b17-9ea9-23486df36622')
 
