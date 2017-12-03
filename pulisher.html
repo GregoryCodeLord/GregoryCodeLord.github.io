@@ -4,12 +4,7 @@
 var client = deepstream('wss://154.deepstreamhub.com?apiKey=632e26ce-715f-4b17-9ea9-23486df36622')
 
 // Login
-client.login({
-    email: 'alex@test.com',
-    password: '45dae45e-ae1c-4652-83cf-04718e394e3f'
-}, (success, data) => {
-    console.log(success, data) // true { favouriteColour: 'blue', id: '${uuid}' }
-});
+client.login()
 
 var record = client.record.getRecord('dsh-demo/bouncy-ball')
 emitInterval = setInterval(function() {
