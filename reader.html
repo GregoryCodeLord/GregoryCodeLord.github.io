@@ -42,7 +42,12 @@
 var client = deepstream('wss://154.deepstreamhub.com?apiKey=632e26ce-715f-4b17-9ea9-23486df36622')
 
 // Login
-client.login()
+client.login({
+    email: 'alex@test.com',
+    password: '.......'
+}, (success, data) => {
+    console.log(success, data) // true { favouriteColour: 'blue', id: '${uuid}' }
+});
 
 // Listen to record changes
 var shapeElement = document.querySelector( '#shape' );

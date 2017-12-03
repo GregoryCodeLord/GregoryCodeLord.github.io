@@ -4,7 +4,12 @@
 var client = deepstream('wss://154.deepstreamhub.com?apiKey=632e26ce-715f-4b17-9ea9-23486df36622')
 
 // Login
-client.login()
+client.login({
+    email: 'alex@test.com',
+    password: '.......'
+}, (success, data) => {
+    console.log(success, data) // true { favouriteColour: 'blue', id: '${uuid}' }
+});
 
 var record = client.record.getRecord('dsh-demo/bouncy-ball')
 emitInterval = setInterval(function() {
@@ -13,7 +18,7 @@ emitInterval = setInterval(function() {
       x: Math.round(Math.random() * 100),
       y: Math.round(Math.random() * 100)
     },
-    color: [ 'red', 'orange', 'yellow',][Math.floor( Math.random() * 3 )],
+    color: [ 'red', 'orange', 'yellow'][Math.floor( Math.random() * 3 )],
     shape: ['circle', 'oval'][Math.floor( Math.random() * 2 )]
   })
 }, 1000)
