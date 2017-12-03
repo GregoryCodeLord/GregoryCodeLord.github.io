@@ -1,0 +1,23 @@
+<script src="//code.deepstreamhub.com/js/2.x/deepstream.min.js"></script>
+<form>
+Your Massage:<br>
+<input type="text" name="massage">
+<br><br>
+<input type="submit">
+</form>
+<script>
+        
+        // Connect to deepstreamHub
+        var client = deepstream('wss://154.deepstreamhub.com?apiKey=632e26ce-715f-4b17-9ea9-23486df36622')
+        
+        // Login
+        client.login()
+        
+        // Listen to record changes
+        var record = client.record.getRecord('chat-a');
+        record.subscribe(function(data) {
+          
+        })
+          
+          
+        </script>
