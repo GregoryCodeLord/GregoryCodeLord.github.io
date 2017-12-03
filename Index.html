@@ -1,0 +1,17 @@
+<script src="//code.deepstreamhub.com/js/2.x/deepstream.min.js"></script>
+<script>
+        // Connect to deepstreamHub
+        var client = deepstream('wss://154.deepstreamhub.com?apiKey=632e26ce-715f-4b17-9ea9-23486df36622')
+        
+        // Login
+        client.login()
+        
+        var record = client.record.getRecord('chat-a')
+        emitInterval = setInterval(function() {
+          record.set({
+            color: [ 'red', 'orange', 'yellow'][Math.floor( Math.random() * 3 )],
+            shape: ['circle', 'oval'][Math.floor( Math.random() * 2 )]
+          })
+        }, 1000)
+          
+        </script>
